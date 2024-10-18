@@ -19,7 +19,7 @@ print("INFO ==> Data Loaded Successfully...")
 Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
 
 # Using Settings to add the LLM model
-Settings.llm = Ollama(model="llama3.2:1b", base_url="http://127.0.0.1:11434")
+Settings.llm = Ollama(model="llama3.2:1b", base_url="http://127.0.0.1:11434", request_timeout=360)
 
 # Index the raw data
 index = VectorStoreIndex.from_documents(documents)
